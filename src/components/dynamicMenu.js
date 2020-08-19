@@ -1,0 +1,163 @@
+const device = {
+    menu:[
+        {
+            name:'围栏',
+            routeName:'Fence',
+            icon:require('../assets/tabbar/Fence.png'),     
+        },   
+        {
+            name:'追踪',
+            routeName:'Trace',
+            icon:require('../assets/tabbar/Trace.png'),
+        },
+        {
+            name:'轨迹',
+            routeName:'Track',
+            icon:require('../assets/tabbar/Trajectory.png'),     
+        },
+        {
+            name:'设置',
+            routeName:'SetUp',
+            icon:require('../assets/tabbar/Setting.png'),    
+        },         
+        {
+        name:'更多',
+        icon:require('../assets/tabbar/More.png'),
+        routeName:null,
+        action:'more',
+        children:[
+            {
+                name:'流量卡',
+                icon:require('../assets/bubble/Norraffic_card.png'),
+                routeName:null,
+                action:'flowCard'
+            },
+            {
+                name:'录音',
+                icon:require('../assets/bubble/Recording.png'),
+                routeName:'Record',
+            },
+            {
+                name:'导航',
+                icon:require('../assets/bubble/Navigation.png'),
+                routeName:null,
+                action:'navigation'
+            },           
+            // {
+            //     name:'位置分享',
+            //     icon:require('../assets/bubble/Share.png'),
+            //     routeName:null,
+            //     action:'share'
+            // },
+            {
+                name:'详情',
+                icon:require('../assets/bubble/Details.png'),
+                routeName:'Details',
+            }
+        ]
+    }]
+}
+
+const deviceCofig = {
+    menu:[
+        {
+            name:'围栏',
+            routeName:'Fence',
+            icon:require('../assets/tabbar/Fence.png'),     
+        },   
+        {
+            name:'追踪',
+            routeName:'Trace',
+            icon:require('../assets/tabbar/Trace.png'),
+        },
+        {
+            name:'轨迹',
+            routeName:'Track',
+            icon:require('../assets/tabbar/Trajectory.png'),     
+        },
+        {
+            name:'设置',
+            routeName:'SetUp',
+            icon:require('../assets/tabbar/Setting.png'),    
+        },         
+        {
+        name:'更多',
+        icon:require('../assets/tabbar/More.png'),
+        routeName:null,
+        action:'more',
+        children:[
+            {
+                name:'流量卡',
+                icon:require('../assets/bubble/Norraffic_card.png'),
+                routeName:null,
+                action:'flowCard'
+            },
+            {
+                name:'导航',
+                icon:require('../assets/bubble/Navigation.png'),
+                routeName:null,
+                action:'navigation'
+            },           
+            {
+                name:'详情',
+                icon:require('../assets/bubble/Details.png'),
+                routeName:'Details',
+            }
+        ]
+    }]
+}
+
+export default {
+    allType:['GT300FZ', 'GT300FZ+', 'GT320S','GT321','AT2','GT320','GT550','OB22'],
+    menu:[{
+        type:['GT300FZ', 'GT300FZ+', 'GT320S','GT321','AT2','GT320'],
+        ...device,
+        recordConfig:{
+            insTimeArr:[
+                {
+                    title:'30秒',
+                    value:30,
+                    isChange:true
+                },
+                {
+                    title:'1分钟',
+                    value:60,
+                    isChange:false
+                },
+                {
+                    title:'2分钟',
+                    value:120,
+                    isChange:false
+                },
+                {
+                    title:'3分钟',
+                    value:180,
+                    isChange:false
+                },
+                {
+                    title:'4分钟',
+                    value:240,
+                    isChange:false
+                },
+                {
+                    title:'5分钟',
+                    value:300,
+                    isChange:false
+                },
+                {
+                    title:'持续录音',
+                    value:30,
+                    isChange:false
+                },
+            ]      
+        },
+        powerShow:true,
+        isVoltage:false
+    },
+    {
+        type:['GT550','OB22'],
+        ...deviceCofig,
+        powerShow:true,
+        isVoltage:true        
+    }
+]}
